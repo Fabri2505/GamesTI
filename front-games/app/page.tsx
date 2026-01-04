@@ -4,7 +4,7 @@ import Header from "@/components/header";
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div>
       <Header titulo="Games-TI"></Header>
       <section className="pt-12 pb-12 px-6 mx-auto text-center">
         <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter text-balance">
@@ -14,11 +14,17 @@ export default function Home() {
           Elige tu campo de batalla. Cartas de alta estrategia o la emoción pura del Bingo.
         </p>
       </section>
-      <section>
+      <section className="flex gap-4 justify-center">
         <CardSelectGame 
-          title="CARTAS MASTER"
+          title="Golpeado"
           subtitle="ESTRATEGIA"
-          imageUrl="/GOLPEADO.png"
+          imageUrl="/Golpeado-Logo.png"
+          onPlay={() => console.log('Iniciar juego')}
+        />
+        <CardSelectGame 
+          title="Bingo"
+          subtitle="Azar y Suerte"
+          imageUrl="/Bingo-Logo.png"
           onPlay={() => console.log('Iniciar juego')}
         />
       </section>
