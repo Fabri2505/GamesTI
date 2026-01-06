@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.games.games_ti.DTO.UserCreateDTO;
 import com.games.games_ti.DTO.UserResponseDTO;
+import com.games.games_ti.DTO.auth.LoginRequestDTO;
+import com.games.games_ti.DTO.auth.LoginResponseDTO;
 import com.games.games_ti.service.UserService;
 
 import jakarta.validation.Valid;
@@ -31,12 +33,18 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @PostMapping("")
+    @PostMapping("register")
     public UserResponseDTO createUser(@Valid @RequestBody UserCreateDTO user) {
         UserResponseDTO userRest = userService.createUser(user);
 
         return ResponseEntity.ok(userRest).getBody();
 
     }
+
+    @PostMapping("login")
+    public LoginResponseDTO loginUser(@RequestBody LoginRequestDTO entity) {
+        return null;
+    }
+    
     
 }
